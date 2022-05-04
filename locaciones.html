@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios" />
+        <title>DNO037</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <p><a href="index.html">Portada</a> <a href="peliculas.html">Películas</a> <a href="locaciones.html" class="active">Locaciones</a> <a href="ganancias.html">Ganancias</a></p>
+            </nav>
+            <main>
+                <div id="mapa">
+                   
+                </div>
+            </main>
+            <footer>
+                <p><a href="https://github.com/reginalatife">Regina Latife</a> <a href="https://github.com/reginalatife/prueba2">Evaluación 2</a></p>
+            </footer>
+        </div>
+<script>
+    var mymap = L.map('mapa').setView([51.5072, -0.1275], 4);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        id: 'mapbox/dark-v10',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+
+     var hpIcon = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/reginalatife/prueba2/main/auto.png',
+
+    iconSize:     [55, 45], 
+    iconAnchor:   [22, 34], 
+    popupAnchor:  [-31, -26] 
+
+    });
+
+    L.marker([51.572,-1.25778],{icon: hpIcon}).addTo(mymap).bindPopup("<b>Oxford</b>. La escalera desde donde la profesora McGonagall da la bienvenida a los alumnos al colegio y la que conduce al Great Hall. Se encuentra en el Christ Church College.");
+    L.marker([51.8571572, -2.2775318],{icon: hpIcon}).addTo(mymap).bindPopup("<b>Gloucester</b>. La Catedral de Gloucester, al sur de Inglaterra. Es una delas  catedrales  más antiguas de Inglaterra, en la segunda película, fue en sus paredes donde aparecían los escritos misteriosos que amenazaban a los alumnos de Hogwarts, así como también la escena en la que Harry y Ron se ocultan del trol.");
+    L.marker([51.4162484, -0.6077139],{icon: hpIcon}).addTo(mymap).bindPopup("<b>Virginia Water</b>. Se encuentra en Surrey, y representa el lago de Hogwarts. Harry lo sobrevuela subido en el Hipogrifo en «Harry Potter y el prisionero de Azkaban» y donde Hermione transmite mensajes a Harry y Ron en «Harry Potter y el cáliz de fuego».");
+    L.marker([54.0864101, -2.5094525],{icon: hpIcon}).addTo(mymap).bindPopup("<b>Yorkshire Norte</b>. Se usó como la estación Hogsmeade, lugar en el que Harry y sus amigos desembarcan en el Hogwart Express antes de continuar su viaje hacia la escuela.");
+    L.marker([55.2957324, -2.6354339],{icon: hpIcon}).addTo(mymap).bindPopup("<b>Northumberland</b>. El Castillo de Alnwick se convertiría en el colegio Hogwarts en las dos primeras películas de Harry Potter.");
+    L.marker([57.6677241, -9.169921],{icon: hpIcon}).addTo(mymap).bindPopup("<b>Escocia</b>. El viaducto de Glenfinan, el puente fue utilizado para las escenas del camino a Hoghwarts, la escuela de magia.");
+    L.marker([51.6914914, -0.4197332],{icon: hpIcon}).addTo(mymap).bindPopup("<b> Warner Bros Studio</b>. El Parque temático que alberga los estudios de Harry Potter en Londres está localizado en Leavesden.");
+
+
+
+
+
+
+
+
+</script>
+    </body>
+</html>
